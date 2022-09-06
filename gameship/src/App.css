@@ -1,15 +1,33 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: none;
+}
 .App {
   text-align: center;
 }
+
 .containerGameShip {
   width: 100%;
   height: 100%;
 }
+.containerGame {
+  width: 100vw;
+  max-width: 360px;
+}
+.containerScreen {
+ 
+}
 .ship {
-  width: 100px;
+  width: 71px;
+  height: 110px;
 
   position: absolute;
   transition: 0.3s;
+
+  background-image: url('./img/LGO.svg');
+  background-size: 71px 110px ;
+  background-repeat: no-repeat;
 }
 .ship img {
   width: 100%;
@@ -19,12 +37,14 @@
 .fire {
   position: absolute;
   opacity: 0;
-  width: 10px;
-  height: 10px;
-
-  border-radius: 10px;
+   
+  height: 20px;
+  width: 20px;
   
-  background-color: #E63946; 
+  
+  background-image: url('./img/fire.svg');
+  background-size: 20px 20px ;
+  background-repeat: no-repeat;
   
   top: 10px;
   left: 10px;
@@ -34,7 +54,7 @@
   from {
     opacity: 1;
   } to {
-    top: -10px;
+    top: 10px;
     opacity: 1;
   }
 }
@@ -47,17 +67,68 @@
   justify-content: center;
 
   width: 100px;
-  height: 30px;
+  height: 100px;
 
-  background-color: #E63946;
+  top: 0;
+
+  background-image: url('./img/enemy.svg');
+  background-size: 100px 96.32px;
+  background-repeat: no-repeat;
 
   animation: moveEnemy 5s infinite alternate;
 }
 
 @keyframes moveEnemy {
   from {
-    left: 80%;
+    left: 70%;
   } to {
-    left: 0;
+    left: 10px;
   }
+}
+
+.lifeEnemy {
+  position: absolute;
+
+  
+  top: 0;
+  left: 5px;
+}
+.enemyFire {
+  position: absolute;
+  opacity: 0;
+
+  height: 20px;
+  width: 20px;
+
+  background-image: url('./img/enemyFire.svg');
+  background-size: 20px 20px ;
+  background-repeat: no-repeat;
+}
+@keyframes moveFireEnemy {
+  from {
+    opacity: 1;
+  } to {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+.gameOver {
+  height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* Joystick class */
+.joystick {
+  display: none;
+}
+@media (max-width: 360px) {
+  .joystick {
+    display: flex;
+    justify-content: space-around;
+  }
+  
 }

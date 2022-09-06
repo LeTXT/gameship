@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import shipImg from '../img/ship.svg'
+import shipImg from '../img/LGO.svg'
 
 export default function Ship({ship}) {
 
@@ -9,7 +9,7 @@ export default function Ship({ship}) {
     return (
         <>
             <div className='ship' ref={ship}>
-                <img src={shipImg} alt="ship" />
+                
             </div>
         </>
     )
